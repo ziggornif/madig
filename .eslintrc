@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "env": {"mocha": true},
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "class-methods-use-this": "off",
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "spec": "./**/*.spec.js",
+  "ignore": "./node_modules/**/*.spec.js",
+  "reporter": "mocha-multi-reporters",
+  "reporterOptions": "configFile=mocha-reporters.json",
+  "timeout": 6000,
+  "bail": true,
+  "exit": true,
+  "colors": true
+}
