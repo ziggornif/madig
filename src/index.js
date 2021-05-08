@@ -1,5 +1,22 @@
+const debug = require('debug')('madig');
+const Joi = require('joi');
+
+const schema = Joi.array().items(
+  Joi.object({
+    class: Joi.function().class().required(),
+    dependsOn: Joi.array().items(
+      Joi.alternatives().try(Joi.function().class(), Joi.object({ name: Joi.string() }).unknown(true))
+    ),
+  })
+);
+
 class Madig {
   constructor(diConfig) {
+    const { error } = schema.validate(diConfig);
+    if (error) {
+      debug('configuration error : ', error.toString());
+      throw new Error('Invalid injectable configuration');
+    }
     this.diConfig = diConfig;
     this.container = new Map();
   }
@@ -55,9 +72,7 @@ class Madig {
       }
     } while (keys.length && keys.length !== length);
 
-    console.log('Injection order', result);
-
-    console.log('Start injection');
+    debug('Start injection');
 
     for (const res of result) {
       const Injectable = this.resolveInjectable(res);

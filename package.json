@@ -12,7 +12,7 @@
     "check-coverage": true,
     "statements": 90,
     "exclude": [
-      "**/*.spec.js"
+      "**/*.spec.js", "src/resources/**"
     ]
   },
   "husky": {
@@ -54,5 +54,9 @@
     "nyc": "^15.1.0",
     "prettier": "^2.2.1",
     "sinon": "^10.0.0"
+  },
+  "dependencies": {
+    "debug": "^4.3.1",
+    "joi": "^17.4.0"
   }
 }

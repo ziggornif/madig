@@ -1,0 +1,9 @@
+node_modules
+build
+.nyc_output
+src/examples
+src/index.spec.js
+.eslintrc
+.mocharc.json
+.prettierrc
+mocha-reporters.json
