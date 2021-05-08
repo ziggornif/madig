@@ -1,6 +1,6 @@
 {
   "name": "madig",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Javascript dependency injection engine",
   "main": "index.js",
   "scripts": {
