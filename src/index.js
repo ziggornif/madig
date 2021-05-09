@@ -1,6 +1,7 @@
 const debug = require('debug')('madig');
 const Joi = require('joi');
 
+// Injectable configuration schema
 const schema = Joi.array().items(
   Joi.object({
     class: Joi.function().class().required(),
@@ -11,6 +12,14 @@ const schema = Joi.array().items(
 );
 
 class Madig {
+  /**
+   * @typedef {Object} InjectableConfiguration
+   * @property {Object} class - Class to instanciate
+   * @property {Array<Object>} dependsOn - Class dependencies to inject
+   *
+   * Madig constructor
+   * @param {Array<InjectableConfiguration>} diConfig
+   */
   constructor(diConfig) {
     const { error } = schema.validate(diConfig);
     if (error) {
@@ -21,6 +30,10 @@ class Madig {
     this.container = new Map();
   }
 
+  /**
+   * Create graph dependencies from configuration
+   * @returns {object} graph
+   */
   createGraph() {
     const graph = {};
     for (const item of this.diConfig) {
@@ -32,6 +45,12 @@ class Madig {
     return graph;
   }
 
+  /**
+   * Retrieve class or module by name
+   * @param {string} name
+   * @returns {Object} class or module
+   * @throws Will throw an error if the injectable is not found.
+   */
   resolveInjectable(name) {
     let injectable = this.diConfig.find((c) => c.class.name === name)?.class;
     if (!injectable) {
@@ -45,10 +64,19 @@ class Madig {
     return injectable;
   }
 
+  /**
+   * Detect if the current object is a class
+   * @param {object} item
+   * @returns
+   */
   isClass(item) {
     return !!item?.prototype?.constructor;
   }
 
+  /**
+   * Load configuration, instanciate classes and inject them
+   * Also add them to the IOC container
+   */
   load() {
     const dependencies = this.createGraph(this.diConfig);
     const keys = Object.keys(dependencies);

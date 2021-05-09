@@ -63,8 +63,6 @@ madig.load();
 
 #### How does it works
 
-Madig loading function 
-
 The loading function determines the classes order of instantiation to be able to instantiate them with constructor dependencies.
 
 For example, the previous configuration 

@@ -1,8 +1,9 @@
 node_modules
 build
 .nyc_output
-src/examples
+examples
 src/index.spec.js
+src/resources
 .eslintrc
 .mocharc.json
 .prettierrc
