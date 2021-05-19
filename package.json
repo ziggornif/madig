@@ -4,7 +4,7 @@
   "description": "Javascript dependency injection engine",
   "main": "index.js",
   "scripts": {
-    "test": " nyc -r lcov -r text-summary mocha",
+    "test": "nyc -r lcov -r text-summary mocha",
     "lint": "eslint src/*.js"
   },
   "nyc": {
@@ -32,7 +32,7 @@
     "type": "git",
     "url": "git+https://github.com/drouian-m/madig.git"
   },
-  "keywords": [],
+  "keywords": ["ioc", "dependency-injection", "ioc-container", "injection-container"],
   "author": "Matthieu Drouian",
   "license": "MIT",
   "bugs": {

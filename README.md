@@ -1,5 +1,7 @@
 # Madig
 
+[![NPM version](https://img.shields.io/npm/v/madig.svg)](https://www.npmjs.com/package/madig) [![Build job](https://github.com/drouian-m/madig/actions/workflows/build.yml/badge.svg)](https://github.com/drouian-m/madig/actions/workflows/build.yml)
+
 Madig is a Javascript dependency injection engine.
 
 ## Installation
