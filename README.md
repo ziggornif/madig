@@ -30,7 +30,7 @@ To do this, declare the dependency as follows.
 ```js
 [{
   class: ClassFile, // the class to instanciate
-  dependsOn: [{name: 'MyModule', MyModule}] // the classes to inject in the constructor
+  dependsOn: [{name: 'MyModule', MyModule}] // the module to inject in the constructor
 }]
 ```
 

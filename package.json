@@ -1,8 +1,8 @@
 {
   "name": "madig",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Javascript dependency injection engine",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "nyc -r lcov -r text-summary mocha",
     "lint": "eslint src/*.js"
@@ -12,7 +12,8 @@
     "check-coverage": true,
     "statements": 90,
     "exclude": [
-      "**/*.spec.js", "src/resources/**"
+      "**/*.spec.js",
+      "src/resources/**"
     ]
   },
   "husky": {
@@ -32,7 +33,12 @@
     "type": "git",
     "url": "git+https://github.com/drouian-m/madig.git"
   },
-  "keywords": ["ioc", "dependency-injection", "ioc-container", "injection-container"],
+  "keywords": [
+    "ioc",
+    "dependency-injection",
+    "ioc-container",
+    "injection-container"
+  ],
   "author": "Matthieu Drouian",
   "license": "MIT",
   "bugs": {
