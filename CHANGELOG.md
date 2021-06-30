@@ -1,3 +1,6 @@
+## 0.2.1 (June 30, 2021)
+
+- Fix wrong main file configuration
 ## 0.2.0 (May 9, 2021)
 
 - Improve documentation
