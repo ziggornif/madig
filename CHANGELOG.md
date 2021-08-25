@@ -1,3 +1,7 @@
+## 0.2.2 (Aug 25, 2021)
+
+- Fix security deps issue (path-parse)
+
 ## 0.2.1 (June 30, 2021)
 
 - Fix wrong main file configuration
